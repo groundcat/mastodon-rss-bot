@@ -2,13 +2,11 @@
 
 ## Getting Started
 
-This instruction will get you a copy of the RSS/Atom subscription bot up and running on your website hosting panel, local machine or a VPS. 
-
-This bot retrieves the latest item from the RSS/Atom feed and post it to your Mastodon account automatically.
+This bot retrieves the latest item from the RSS/Atom feed and post it to your Mastodon account automatically. You can run the bot in your website hosting panel or a VPS under the php environment. 
 
 ## Prerequisites
 
-An environment with php5.6+
+php5.6+
 
 This file needs to work with rss-php, which is a small and easy-to-use library for consuming RSS and Atom feeds. You can download rss-php [here](https://github.com/dg/rss-php).
 
@@ -16,12 +14,12 @@ This file needs to work with rss-php, which is a small and easy-to-use library f
 
 Follow these steps:
 
-1. Put `bot.php` in the same directory of [rss-php](https://github.com/dg/rss-php)
-2. Edit the configuration area in `bot.php`
-3. Create an empty file named `storage.txt` in the same directory
-4. Set the permission of `storage.txt` file to be writable
-5. Test running `bot.php` to see if it works
-6. Create a crontab to frequently run `bot.php`
+1. Put `bot.php` in the same directory of [rss-php](https://github.com/dg/rss-php).
+2. Edit the configuration area in `bot.php` with the token of your Mastodon bot account, URL of your instance, and the URL of RSS or Atom feed.
+3. Create an empty file named `storage.txt` in the same directory.
+4. Set the permission of `storage.txt` file to be writable.
+5. Test running `bot.php` to see if it works.
+6. Create a crontab to frequently run `bot.php`, for example, every 20 minutes.
 
 ## Author
 
@@ -30,4 +28,4 @@ Follow these steps:
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
