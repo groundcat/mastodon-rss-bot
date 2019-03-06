@@ -16,7 +16,7 @@ This file needs to work with rss-php, which is a small and easy-to-use library f
 
 Follow these steps:
 
-1. Put `bot.php` in the directory of rss-php
+1. Put `bot.php` in the same directory of [rss-php](https://github.com/dg/rss-php)
 2. Edit the configuration area in `bot.php`
 3. Create an empty file named `storage.txt` in the same directory
 4. Set the permission of `storage.txt` file to be writable
@@ -25,8 +25,8 @@ Follow these steps:
 
 ## Author
 
-Author Website: https://yanziyao.cn
-Author Mastodon: https://o3o.ca/@salt
+- Author's Website: https://yanziyao.cn
+- Author's Mastodon: https://o3o.ca/@salt
 
 ## License
 
