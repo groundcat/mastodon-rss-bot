@@ -11,6 +11,8 @@ PLEASE FOLLOW THE STEPS IN README.MD
 $token="YOUR_TOKEN_HERE"; // Token of your Mastodon bot account
 $base_url="https://example.com"; // URL of your instance (Do not include '/' at the end.)
 $feed_url="https://example.com/feed.xml"; // URL of RSS or Atom feed
+$visibility="public"; // The four tiers of visibility for toots are Public (default), Unlisted, Private, and Direct
+$language="en"; // en for English, zh for Chinese, etc.
 
 // End of configuration. You don't need to edit anything below.
 
@@ -54,8 +56,8 @@ if ($lastpost == $post) {
 
     $status_data = array(
       "status" => $post,
-      "language" => "zh",
-      "visibility" => "public"
+      "language" => $language,
+      "visibility" => $visibility
     );
 
     $ch_status = curl_init();
