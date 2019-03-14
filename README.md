@@ -16,10 +16,9 @@ Follow these steps:
 
 1. Put `bot.php` in the same directory of [rss-php](https://github.com/dg/rss-php).
 2. Edit the configuration area in `bot.php` with the token of your Mastodon bot account, URL of your instance, and the URL of RSS or Atom feed.
-3. Create an empty file named `storage.txt` in the same directory.
-4. Set the permission of `storage.txt` file to be writable.
-5. Test running `bot.php` to see if it works.
-6. Create a crontab to frequently run `bot.php`, for example, every 20 minutes.
+3. Set the permission of `storage.txt` and `count.txt` to writable (775).
+4. Test running `bot.php` to see if it works.
+5. Create a crontab to frequently run `bot.php`, for example, every 20 minutes.
 
 ## Author
 
