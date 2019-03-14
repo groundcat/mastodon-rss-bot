@@ -1,3 +1,5 @@
+
+
 <?php
 
 /**
@@ -6,15 +8,30 @@ PLEASE FOLLOW THE STEPS IN README.MD
 
 **/
 
+
 // Mastodon and RSS feed configuration:
 
-$token="YOUR_TOKEN_HERE"; // Token of your Mastodon bot account
-$base_url="https://example.com"; // URL of your instance (Do not include '/' at the end.)
-$feed_url="https://example.com/feed.xml"; // URL of RSS or Atom feed
-$visibility="public"; // The four tiers of visibility for toots are Public (default), Unlisted, Private, and Direct
-$language="en"; // en for English, zh for Chinese, etc.
+$token="YOUR_TOKEN_HERE"; 
+// Token of your Mastodon bot account
+
+$base_url="https://mastodon.social"; 
+// URL of your instance (Do not include '/' at the end.)
+
+$feed_url="https://example.com/feed.xml"; 
+// URL of RSS or Atom feed
+
+$visibility="public"; 
+// The four tiers of visibility for toots are public (by default), unlisted, private, and direct.
+
+$public_frequency=1; 
+// If the value here is 3 and your $visibility value above is "public", then the toot's visibility will be made "public" every 3 toots. Other toots will be "unlisted" by default. If the value here is 1, it means that the visibility is always your $visibility value above.
+
+$language="en"; 
+// en for English, zh for Chinese, etc.
+
 
 // End of configuration. You don't need to edit anything below.
+
 
 // Retrieve the latest post from the RSS feed
 
@@ -41,6 +58,31 @@ if ($lastpost == $post) {
   echo "<br>Last post: Post not changed";
   
 } else {
+
+    // Read the last count from the local file count.txt
+
+    $readcount = fopen("count.txt", "r") or die("Unable to open file!");
+    $lastcount = fread($readcount,filesize("count.txt"));
+    echo "<br>Last count: " . $lastcount;
+    fclose($readcount);
+    $newcount=$lastcount+1;
+    echo "<br>New count: " . $newcount;
+
+    // Write the new count to the local file count.txt
+
+    $writecount = fopen("count.txt", "w") or die("Unable to open file!");
+    fwrite($writecount, $newcount);
+    fclose($writecount);
+
+    // Set visibility based on count
+
+    $count_factor=$newcount/$public_frequency;
+    if(is_int($count_factor)){
+            echo "<br>Visibility: " . $visibility ;
+      }else{
+            $visibility="unlisted"; 
+            echo "<br>Visibility: " . $visibility ;
+           }
 
     // Write the new post content to the local file storage.txt
 
