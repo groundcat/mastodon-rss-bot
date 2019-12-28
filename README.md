@@ -20,11 +20,6 @@ Follow these steps:
 4. Test running `bot.php` to see if it works.
 5. Create a crontab to frequently run `bot.php`, for example, every 20 minutes.
 
-## Author
-
-- Author's Website: https://yanziyao.cn
-- Author's Mastodon: https://o3o.ca/@salt
-
 ## License
 
 This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
