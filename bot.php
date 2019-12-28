@@ -1,5 +1,3 @@
-
-
 <?php
 
 /**
@@ -7,7 +5,6 @@
 PLEASE FOLLOW THE STEPS IN README.MD
 
 **/
-
 
 // Mastodon and RSS feed configuration:
 
@@ -29,16 +26,16 @@ $public_frequency=1;
 $language="en"; 
 // en for English, zh for Chinese, etc.
 
-
-// End of configuration. You don't need to edit anything below.
-
-
-// Retrieve the latest post from the RSS feed
-
 header('Content-Type: text/html; charset=utf-8');
 if (!ini_get('date.timezone')) {
 	date_default_timezone_set('Europe/Prague');
 }
+// Configure the timezone.
+
+// End of configuration. You don't need to edit anything below.
+
+// Retrieve the latest post from the RSS feed
+
 require_once 'src/Feed.php';
 
 $rss = Feed::loadRss($feed_url);
