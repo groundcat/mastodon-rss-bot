@@ -1,0 +1,3 @@
+[submodule "rss-php"]
+	path = rss-php
+	url = https://github.com/dg/rss-php.git
